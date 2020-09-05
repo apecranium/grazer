@@ -1,0 +1,8 @@
+bin/
+node_modules/
+obj/
+*.db
+*.log
+
+wwwroot/css/
+wwwroot/js/

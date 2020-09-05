@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "dotnet-ef": {
+      "version": "3.1.6",
+      "commands": [
+        "dotnet-ef"
+      ]
+    },
+    "rnwood.smtp4dev": {
+      "version": "3.1.1-ci2020080409",
+      "commands": [
+        "smtp4dev"
+      ]
+    },
+    "powershell": {
+      "version": "7.0.3",
+      "commands": [
+        "pwsh"
+      ]
+    }
+  }
+}

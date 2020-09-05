@@ -1,0 +1,26 @@
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    if (User.IsInRole("Admin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Posts" asp-action="Index">posts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Users" asp-action="Index">users</a>
+        </li>
+    }
+    <li class="nav-item">
+        <form asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-link nav-link border-0">log out</button>
+        </form>
+    </li>
+}
+else
+{
+
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Register">register</a></li>
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">log in</a></li>
+}

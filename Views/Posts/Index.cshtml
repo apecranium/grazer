@@ -1,0 +1,54 @@
+@model PostsViewModel
+
+@{
+    ViewData["Title"] = "view posts";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Create">new post.</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>author</th>
+            <th>title</th>
+            <th>date posted</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(_ => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(_ => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(_ => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(_ => item.DatePosted)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" asp-route-page="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

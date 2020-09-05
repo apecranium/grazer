@@ -1,0 +1,48 @@
+@model UsersViewModel
+
+@{
+    ViewData["Title"] = "view users";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>username</th>
+            <th>email</th>
+            <th>email confirmed?</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(_ => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(_ => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(_ => item.EmailConfirmed)
+                </td>
+                <td>
+                    <a asp-action="edit" asp-route-id="@item.Id">edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" asp-route-page="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
