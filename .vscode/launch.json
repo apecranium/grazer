@@ -6,9 +6,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/Grazer.dll",
+      "program": "${workspaceFolder}/Grazer/bin/Debug/netcoreapp3.1/Grazer.dll",
       "args": [],
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}/Grazer",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "sourceFileMap": {
-        "/Views": "${workspaceFolder}/Views"
+        "/Views": "${workspaceFolder}/Grazer/Views"
       }
     },
     {

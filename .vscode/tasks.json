@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "pwsh",
-        "grazer.ps1",
+        "${workspaceFolder}/Grazer/grazer.ps1",
         "install"
       ],
       "problemMatcher": "$msCompile"
@@ -18,7 +18,7 @@
       "type": "process",
       "args": [
         "pwsh",
-        "grazer.ps1",
+        "${workspaceFolder}/Grazer/grazer.ps1",
         "build"
       ],
       "problemMatcher": "$msCompile"

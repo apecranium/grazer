@@ -4,5 +4,5 @@ obj/
 *.db
 *.log
 
-wwwroot/css/
-wwwroot/js/
+**/wwwroot/css
+**/wwwroot/js
