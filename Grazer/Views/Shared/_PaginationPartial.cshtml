@@ -1,0 +1,12 @@
+@model IPaginated
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" asp-route-page="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

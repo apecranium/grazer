@@ -4,7 +4,7 @@ using Grazer.Models;
 
 namespace Grazer.ViewModels
 {
-    public class PostsViewModel
+    public class PostsViewModel : IPaginated
     {
         public List<Post> Posts { get; set; }
         public int Page { get; set; }
